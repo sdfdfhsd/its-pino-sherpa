@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>매력 높은 사람의 특징 — 피노</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+  :root {
+    --bg: #FDFAF6;
+    --surface: #FFFFFF;
+    --ink: #1C1A17;
+    --ink-muted: #6B6560;
+    --accent: #C9775A;
+    --accent-soft: #F2E8E3;
+    --accent2: #7C9E8F;
+    --accent2-soft: #E8F1EE;
+    --gold: #C4A882;
+    --line: #EDE8E2;
+    --serif: 'Noto Serif KR', serif;
+    --sans: 'Noto Sans KR', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 72px 48px 120px;
+  }
+
+  /* HERO */
+  .hero {
+    margin-bottom: 64px;
+    border-bottom: 1.5px solid var(--line);
+    padding-bottom: 48px;
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .hero-title {
+    font-family: var(--serif);
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--ink);
+    margin-bottom: 16px;
+    word-break: keep-all;
+  }
+
+  .hero-title em { color: var(--accent); font-style: normal; }
+
+  .hero-sub {
+    font-size: 14px;
+    color: var(--ink-muted);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  /* INTRO BOX */
+  .intro-box {
+    background: var(--ink);
+    color: #F5F0EA;
+    border-radius: 16px;
+    padding: 36px 40px;
+    margin-bottom: 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .intro-box::before {
+    content: '❝';
+    position: absolute;
+    top: -10px; right: 24px;
+    font-size: 120px;
+    color: rgba(255,255,255,0.05);
+    font-family: var(--serif);
+    line-height: 1;
+  }
+
+  .intro-box p {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.9;
+    font-weight: 300;
+  }
+
+  .intro-box strong { color: #E8C9B8; font-weight: 600; }
+
+  .pino-sig {
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.08em;
+  }
+
+  /* SECTION HEADER */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .section-num {
+    font-family: var(--serif);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+  }
+
+  .section-divider {
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  /* CARD */
+  .card {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 40px 44px;
+    margin-bottom: 28px;
+    border: 1.5px solid var(--line);
+    position: relative;
+    transition: box-shadow 0.2s;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+  }
+
+  .card-index {
+    position: absolute;
+    top: -1px;
+    left: 44px;
+    font-family: var(--serif);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--surface);
+    background: var(--accent);
+    padding: 4px 14px;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .card-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-top: 16px;
+    margin-bottom: 6px;
+    word-break: keep-all;
+  }
+
+  .card-subtitle {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    margin-bottom: 24px;
+  }
+
+  /* EXAMPLE BLOCK */
+  .example-block {
+    background: var(--accent-soft);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+  }
+
+  .example-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .example-quote {
+    font-family: var(--serif);
+    font-size: 15.5px;
+    color: var(--ink);
+    line-height: 1.75;
+  }
+
+  /* WHY BLOCK */
+  .why-block { padding: 4px 0; }
+
+  .why-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 14px;
+  }
+
+  .why-text {
+    font-size: 14.5px;
+    color: var(--ink);
+    line-height: 1.9;
+    margin-bottom: 14px;
+    word-break: keep-all;
+  }
+
+  .theory-pill {
+    display: inline-block;
+    background: var(--accent2-soft);
+    color: var(--accent2);
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin: 4px 4px 4px 0;
+    letter-spacing: 0.04em;
+  }
+
+  .key-insight {
+    margin-top: 18px;
+    padding: 16px 20px;
+    border-left: 3px solid var(--accent);
+    background: #FEFCFA;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .key-insight p {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.8;
+    word-break: keep-all;
+  }
+
+  .key-insight strong { color: var(--accent); }
+
+  /* OK NOT */
+  .ok-not {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .ok-item, .not-item {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+    word-break: keep-all;
+  }
+
+  .ok-item { background: var(--accent2-soft); color: #3D6B5E; }
+  .not-item { background: #FBF0EE; color: #9B4F3F; }
+  .ok-item::before { content: '✓  '; font-weight: 700; }
+  .not-item::before { content: '✗  '; font-weight: 700; }
+
+  /* SUMMARY */
+  .summary {
+    background: var(--ink);
+    border-radius: 24px;
+    padding: 52px 48px;
+    margin-top: 56px;
+    color: #F5F0EA;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .summary::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(201,119,90,0.12);
+  }
+
+  .summary-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .summary-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.45;
+    margin-bottom: 32px;
+    word-break: keep-all;
+  }
+
+  .summary-title em { color: #E8C9B8; font-style: normal; }
+
+  .summary-points {
+    list-style: none;
+    margin-bottom: 36px;
+  }
+
+  .summary-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 15px;
+    line-height: 1.7;
+    word-break: keep-all;
+  }
+
+  .summary-points li:last-child { border-bottom: none; }
+
+  .summary-points li .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 8px;
+  }
+
+  .conclusion {
+    background: rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 28px 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .conclusion-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .conclusion p {
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.75;
+    color: #F5F0EA;
+    word-break: keep-all;
+  }
+
+  .conclusion strong { color: #E8C9B8; }
+
+  /* DISCLAIMER */
+  .disclaimer {
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    line-height: 1.85;
+    padding: 24px 28px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    margin-bottom: 48px;
+    word-break: keep-all;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    margin-top: 72px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+  }
+
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+    line-height: 2;
+  }
+
+  .footer-brand strong { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    .page { padding: 40px 24px 80px; }
+    .hero-title { font-size: 28px; }
+    .card { padding: 32px 28px; }
+    .card-index { left: 28px; }
+    .summary { padding: 40px 32px; }
+    .ok-not { flex-direction: column; }
+    .intro-box { padding: 28px 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-label">✨ 매력 정리본</div>
+    <h1 class="hero-title">매력 높은 사람들의<br><em>공통점 4가지</em></h1>
+    <p class="hero-sub">감정에 끌려다니지 않는 사람의 특징 · by 피노</p>
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro-box">
+    <p>
+      매력 있는 사람들한테는 공통점이 하나 있어요.<br><br>
+      외모도, 말솜씨도, 스펙도 아니에요.<br>
+      <strong>감정에 끌려다니지 않는다는 것.</strong><br><br>
+      더 정확히는 — 자기 중심이 있어요.<br>
+      흔들려도 돌아올 데가 있는 사람.<br>
+      그게 상대를 가장 강하게 끌어당겨요.
+    </p>
+    <div class="pino-sig">— 피노 @its_.pino</div>
+  </div>
+
+  <!-- CARDS -->
+  <div class="section-header">
+    <span class="section-num">4가지 특징</span>
+    <div class="section-divider"></div>
+  </div>
+
+  <!-- 1 -->
+  <div class="card">
+    <div class="card-index">01</div>
+    <div class="card-title">리액션이 따뜻하다</div>
+    <div class="card-subtitle">에너지로 상대를 끌어올리는 능력</div>
+
+    <div class="example-block">
+      <div class="example-label">✦ 이런 사람이에요</div>
+      <div class="example-quote">상대가 뭘 말해도 차갑게 받지 않아요.<br>"진짜?" "그랬어?" "헉, 대박인데?"<br>같이 있으면 기분이 올라가는 사람.</div>
+    </div>
+
+    <div class="why-block">
+      <div class="why-label">왜 매력적이냐</div>
+      <div class="why-text">사람은 자기 말이 잘 받아들여질 때 더 많이 열려요. 리액션은 단순한 반응이 아니에요. <strong>상대의 말에 온도를 맞춰주는 능력</strong>이에요. 이게 대화를 따뜻하게 만들고, 상대가 계속 곁에 있고 싶게 만들어요.</div>
+      <span class="theory-pill">정서적 공명</span>
+      <span class="theory-pill">대화 친밀감</span>
+
+      <div class="key-insight">
+        <p>이건 타고난 성격이 아니에요.<br><strong>습관이에요.</strong> 의식적으로 온도를 맞추는 연습이 쌓이면 누구나 가질 수 있어요.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="card">
+    <div class="card-index">02</div>
+    <div class="card-title">관계에 연연하지 않는다</div>
+    <div class="card-subtitle">자존감에서 나오는 여유</div>
+
+    <div class="example-block">
+      <div class="example-label">✦ 이런 사람이에요</div>
+      <div class="example-quote">"이 관계가 없어도 나는 괜찮아."<br>이 확신이 있는 사람.<br>매달리지 않아요. 근데 오히려 더 붙잡고 싶어요.</div>
+    </div>
+
+    <div class="why-block">
+      <div class="why-label">왜 매력적이냐</div>
+      <div class="why-text">자존심이랑 자존감은 달라요. <strong>자존심은 지키려고 싸우고, 자존감은 안 싸워도 괜찮아요.</strong> 관계에 집착하지 않는 사람은 상대에게 선택받고 싶은 욕구를 자극해요. 쉽게 얻을 수 없는 것에 더 끌리는 심리거든요.</div>
+      <span class="theory-pill">자기결정성이론</span>
+      <span class="theory-pill">희소성 효과</span>
+
+      <div class="ok-not">
+        <div class="not-item">자존심 — 지키려고 싸운다</div>
+        <div class="ok-item">자존감 — 안 싸워도 흔들리지 않는다</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="card">
+    <div class="card-index">03</div>
+    <div class="card-title">잘못하면 바로 인정한다</div>
+    <div class="card-subtitle">신뢰를 만드는 가장 빠른 방법</div>
+
+    <div class="example-block">
+      <div class="example-label">✦ 이런 사람이에요</div>
+      <div class="example-quote">"내가 틀렸어."<br>이 말이 쉽게 나오는 사람.<br>인정해도 무너지지 않으니까 할 수 있는 말이에요.</div>
+    </div>
+
+    <div class="why-block">
+      <div class="why-label">왜 매력적이냐</div>
+      <div class="why-text">자존감이 낮은 사람은 틀렸다는 걸 인정하면 자신이 작아지는 느낌을 받아요. 그래서 방어하고 싸워요. 반대로 <strong>자존감이 높은 사람은 인정해도 안 무너져요.</strong> 이게 관계에서 신뢰를 만드는 가장 빠른 방법이에요.</div>
+      <span class="theory-pill">심리적 안전감</span>
+      <span class="theory-pill">신뢰 형성</span>
+
+      <div class="key-insight">
+        <p>"내가 틀렸어" 한 마디가<br><strong>어떤 변명보다 강한 신뢰를 만들어요.</strong><br>자존심이 강한 사람은 절대 못 해요.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="card">
+    <div class="card-index">04</div>
+    <div class="card-title">상대 감정을 응석으로 받는다</div>
+    <div class="card-subtitle">흔들리지 않으면서 따뜻하게</div>
+
+    <div class="example-block">
+      <div class="example-label">✦ 이런 사람이에요</div>
+      <div class="example-quote">상대가 짜증을 내도 — 짜증으로 받지 않아요.<br>"어, 힘들었나보다. 귀엽네."<br>이렇게 받는 사람.</div>
+    </div>
+
+    <div class="why-block">
+      <div class="why-label">왜 매력적이냐</div>
+      <div class="why-text">감정은 전염돼요. 상대가 어두운 감정을 가져와도 같이 어두워지지 않는 사람 — 이게 관계를 밝게 유지해요. <strong>친절한 선생님처럼 흔들리지 않고 따뜻하게 받아주는 것.</strong> 이게 상대를 가장 강하게 무장해제시켜요.</div>
+      <span class="theory-pill">감정 조절 능력</span>
+      <span class="theory-pill">정서적 성숙</span>
+
+      <div class="key-insight">
+        <p>이건 참는 게 아니에요.<br>감정에 <strong>끌려다니지 않는 것</strong>이에요.<br>그 안정감이 상대를 계속 곁에 있게 만들어요.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary">
+    <div class="summary-eyebrow">🔑 한 줄 정리</div>
+    <div class="summary-title">매력은 노력의 양이 아니에요.<br><em>내가 얼마나 단단한가</em>예요.</div>
+
+    <ul class="summary-points">
+      <li><span class="dot"></span><span>리액션이 따뜻하다 — <strong>온도를 맞춰주는 능력</strong>이 상대를 끌어올린다</span></li>
+      <li><span class="dot"></span><span>관계에 연연하지 않는다 — <strong>자존감에서 나오는 여유</strong>가 오히려 붙잡고 싶게 만든다</span></li>
+      <li><span class="dot"></span><span>잘못하면 바로 인정한다 — <strong>인정해도 안 무너지는 사람</strong>이 신뢰를 만든다</span></li>
+      <li><span class="dot"></span><span>감정을 응석으로 받는다 — <strong>흔들리지 않는 따뜻함</strong>이 상대를 무장해제시킨다</span></li>
+    </ul>
+
+    <div class="conclusion">
+      <div class="conclusion-label">💬 피노의 한 줄 결론</div>
+      <p>
+        감정에 끌려다니지 않는 사람.<br>
+        <strong>자기 중심이 단단한 사람.</strong><br><br>
+        그게 매력의 시작이에요.
+      </p>
+    </div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    ※ 이 정리본은 절대적인 기준이 아니에요. 사람마다 상황마다 다를 수 있어요. 다만 지금 내 관계와 나 자신을 한 번쯤 돌아보는 계기가 됐으면 해요.
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-brand">
+      끌리는 대로 말고, 제대로 — <strong>피노 @its_.pino</strong><br>
+      © 2026 Dear Soul Map · 피노 @its.pino<br>
+      이 콘텐츠의 무단 복제 및 재배포를 금지합니다.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
